@@ -1,6 +1,6 @@
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 #
-#   extract.py
+#   processAudio.py
 #       extracts praat data from an audio file
 #
 #   Preconditions:

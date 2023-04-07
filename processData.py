@@ -20,7 +20,7 @@ import librosa as lib
 import pandas
 from noisify import *
 from adaptiveFilter import *
-from extract import *
+from processAudio import *
 
 def noisifyDir(sentenceDir):
     return True

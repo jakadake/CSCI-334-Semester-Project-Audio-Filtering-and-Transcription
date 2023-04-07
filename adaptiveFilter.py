@@ -27,22 +27,22 @@ import numpy as np
 import scipy.io.wavfile as wf
 import os.path as path
 
-def adaptiveFilterLMS(inFile, lRate, fOrder, outFile):
+def adaptiveFilterLMS(inFile, outFile, lRate=0.01, fOrder=100):
     sRate, audioData = wf.read(inFile)
     
-    reference = np.random.normal(0,1,len(audioData))
+    reference = np.random.randn(len(audioData))
     
-    testSamples = np.zeros(fOrder)
+    filCoef = np.zeros(fOrder)
     filteredAudio = np.zeros(len(audioData))
     
     for n in range(fOrder, len(audioData)):
-        x = reference[n-fOrder:n]
-        y = np.dot(testSamples,x)
-        error = audioData[n] - y
-        testSamples += lRate * error * x
-        filteredAudio[n] = audioData[n] - y
+        noiseInput = reference[n-fOrder:n]
+        filtOutput = np.dot(filCoef, noiseInput)
+        error = audioData[n] - filtOutput
+        filCoef += lRate * error * noiseInput
+        filteredAudio[n] = audioData[n] - filtOutput
     
-    wf.write(outFile)
+    wf.write(outFile + "_filtered.wav", sRate, np.int16(filteredAudio))
 
 def main():
     validInputFlag = False
