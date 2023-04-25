@@ -27,22 +27,24 @@ import numpy as np
 import scipy.io.wavfile as wf
 import os.path as path
 
-def adaptiveFilterLMS(inFile, outFile, lRate=0.01, fOrder=100):
+def LMS(inFile: str, outFile: str, ref_out: str, lRate=0.01, fOrder=100):
     sRate, audioData = wf.read(inFile)
     
-    reference = np.random.randn(len(audioData))
+    reference = np.random.normal(0, 1, len(audioData))
     
-    filCoef = np.zeros(fOrder)
+    filtCoef = np.zeros(fOrder)
     filteredAudio = np.zeros(len(audioData))
     
-    for n in range(fOrder, len(audioData)):
+    for n in range(fOrder, len(audioData)-100):
         noiseInput = reference[n-fOrder:n]
-        filtOutput = np.dot(filCoef, noiseInput)
+        filtOutput = np.dot(filtCoef, noiseInput)
         error = audioData[n] - filtOutput
-        filCoef += lRate * error * noiseInput
+        filtCoef += lRate * error * noiseInput
         filteredAudio[n] = audioData[n] - filtOutput
-    
-    wf.write(outFile + "_filtered.wav", sRate, np.int16(filteredAudio))
+
+    wf.write(ref_out.replace(".wav", "_noise_ref.wav"), sRate, np.int16(reference))
+    wf.write(outFile.replace(".wav", "_filtered.wav"), sRate, np.int16(filteredAudio))
+    return True
 
 def main():
     validInputFlag = False
@@ -80,7 +82,7 @@ def main():
         else:
             print('ERROR: invalid file path, please try again')
     
-    if adaptiveFilterLMS(inFile, lRate, fOrder, outFile):
+    if AF_LMS(inFile, lRate, fOrder, outFile):
         print('noisified successfully')
         return True
     else:

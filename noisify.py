@@ -25,19 +25,20 @@ import scipy.io.wavfile as wf
 
 def noisify(inFile, amp, outFile):
     if path.isfile(inFile) and inFile.endswith(".wav"):
-        outFile = outFile + "_" + amp + "_noisy.wav"
+        outFile = outFile.replace(".wav", f"_{int(amp*100)}_noisy.wav")
         sRate, audioData = wf.read(inFile)
-        noise = np.random.normal(0,1,len(audioData))            
-        noise = amp*noise/max(abs(noise))
-        noisyAudio = audioData+noise
-        wf.write(outFile, sRate, noisyAudio)
+        noise = np.random.normal(0, 1, len(audioData))
+        noise = noise * amp * max(abs(audioData))
+        noisyAudio = audioData + noise
+        wf.write(outFile, sRate, noisyAudio.astype(np.int16))
+
         if path.exists(outFile):
             return True
         else:
-            print('ERROR: problem writing to file, exiting...')
+            print('ERROR: problem writing to file, exiting noisify...')
             return False
     else:
-        print('ERROR: problem reading from file or incorrect file type, exiting...')
+        print('ERROR: problem reading from file or incorrect file type, exiting noisify...')
         return False
     
 def main():
@@ -48,7 +49,7 @@ def main():
             validInputFlag = True
         else:
             print('ERROR: invalid file path, please try again')
-    
+
     validInputFlag = False
     while validInputFlag == False:
         try:
@@ -59,7 +60,7 @@ def main():
                 print('ERROR: invalid input type, please try again.')
         except:
             print('ERROR: invalid input type, please try again.')
-            
+
     validInputFlag = False
     while validInputFlag == False:
         outFile = input('enter the output filepath without the file extension: ')
@@ -67,7 +68,7 @@ def main():
             validInputFlag = True
         else:
             print('ERROR: invalid file path, please try again')
-    
+
     if noisify(inFile, amplitude, outFile):
         print('noisified successfully')
         return True
