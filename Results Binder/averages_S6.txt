@@ -1,0 +1,5 @@
+Average Errors by Amplitude
+Amp		|	noisy		|	filtered
+0.05		|	253100.0%		|	372450.0
+0.25		|	1267500.0%		|	1801200.0
+0.5		|	2556050.0%		|	3629850.0

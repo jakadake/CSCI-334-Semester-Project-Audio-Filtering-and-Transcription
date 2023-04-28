@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Loukusa_shyeurasian.wav		|	0.05 Hz		|	2014 %		|	3006 %
+Loukusa_shyeurasian.wav		|	0.25 Hz		|	10097 %		|	14359 %
+Loukusa_shyeurasian.wav		|	0.5 Hz		|	20165 %		|	28710 %

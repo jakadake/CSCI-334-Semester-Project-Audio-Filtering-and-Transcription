@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Randolph_suzie.wav		|	0.05 Hz		|	1594 %		|	2403 %
+Randolph_suzie.wav		|	0.25 Hz		|	7975 %		|	11371 %
+Randolph_suzie.wav		|	0.5 Hz		|	15894 %		|	22536 %

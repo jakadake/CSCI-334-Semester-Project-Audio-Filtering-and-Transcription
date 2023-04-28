@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+OConnor_shyeurasian.wav		|	0.05 Hz		|	2441 %		|	3622 %
+OConnor_shyeurasian.wav		|	0.25 Hz		|	12227 %		|	17052 %
+OConnor_shyeurasian.wav		|	0.5 Hz		|	23884 %		|	29366 %

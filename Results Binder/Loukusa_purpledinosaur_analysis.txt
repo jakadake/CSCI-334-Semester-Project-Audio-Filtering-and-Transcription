@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Loukusa_purpledinosaur.wav		|	0.05 Hz		|	2950 %		|	4335 %
+Loukusa_purpledinosaur.wav		|	0.25 Hz		|	14726 %		|	20941 %
+Loukusa_purpledinosaur.wav		|	0.5 Hz		|	29613 %		|	42028 %

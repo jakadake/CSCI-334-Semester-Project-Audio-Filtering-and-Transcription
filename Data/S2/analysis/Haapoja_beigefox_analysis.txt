@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Haapoja_beigefox.wav		|	0.05 Hz		|	1297 %		|	1936 %
+Haapoja_beigefox.wav		|	0.25 Hz		|	6455 %		|	9161 %
+Haapoja_beigefox.wav		|	0.5 Hz		|	12909 %		|	18281 %

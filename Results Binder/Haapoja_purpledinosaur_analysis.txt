@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Haapoja_purpledinosaur.wav		|	0.05 Hz		|	980 %		|	1510 %
+Haapoja_purpledinosaur.wav		|	0.25 Hz		|	4919 %		|	7027 %
+Haapoja_purpledinosaur.wav		|	0.5 Hz		|	9848 %		|	13972 %

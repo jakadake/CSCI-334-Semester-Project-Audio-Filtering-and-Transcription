@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module processAudio</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>processAudio</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:g%3A%5Cmy%20drive%5Cschool%5Cscsu%5Ccsci%20334%20-%20last%20try%5Csemester%20project%5Ccsci-334-semester-project-audio-filtering-and-transcription%5Cprocessaudio.py">g:\my drive\school\scsu\csci 334 - last try\semester project\csci-334-semester-project-audio-filtering-and-transcription\processaudio.py</a></font></td></tr></table>
+    <p><tt>#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;processAudio.py<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;noisifies,&nbsp;then&nbsp;filters&nbsp;the&nbsp;audio&nbsp;samples,&nbsp;saving&nbsp;the&nbsp;noisy,<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;filtered,&nbsp;and&nbsp;reference&nbsp;noise&nbsp;signals&nbsp;as&nbsp;sound&nbsp;files<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;Preconditions:&nbsp;Data&nbsp;folder&nbsp;is&nbsp;formatted&nbsp;as&nbsp;shown&nbsp;below:<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;sentence&nbsp;folder&nbsp;names&nbsp;can&nbsp;be&nbsp;arbitrary&nbsp;but&nbsp;must&nbsp;have&nbsp;subfolders<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;structured&nbsp;as&nbsp;below<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Data<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|[sentenceFileName]<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|_0riginal<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|audio<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|_[%noiseAmplitude]_percent<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|filtered<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|noisy<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;|...&nbsp;(repeat&nbsp;for&nbsp;number&nbsp;of&nbsp;amplitudes&nbsp;to&nbsp;study)<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;Postconditions:&nbsp;all&nbsp;audio&nbsp;files&nbsp;in&nbsp;all&nbsp;sentence&nbsp;folders&nbsp;will&nbsp;have<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;been&nbsp;noisified,&nbsp;filtered,&nbsp;and&nbsp;then&nbsp;stored&nbsp;in&nbsp;their&nbsp;respective<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;folders<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;Author:&nbsp;Jacob&nbsp;Haapoja<br>
+#&nbsp;&nbsp;&nbsp;©2023<br>
+#<br>
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+</td><td width="25%" valign=top><a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
+</td><td width="25%" valign=top><a href="scipy.io.wavfile.html">scipy.io.wavfile</a><br>
+</td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-LMS"><strong>LMS</strong></a>(inFile: str, outFile: str, ref_out: str, amp=0.1, lRate=0.01, fOrder=100)</dt><dd><tt>#&nbsp;applies&nbsp;a&nbsp;least&nbsp;mean&nbsp;squares&nbsp;filter&nbsp;to&nbsp;the&nbsp;sound&nbsp;indicated&nbsp;by&nbsp;inFile</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt></dl>
+ <dl><dt><a name="-noisify"><strong>noisify</strong></a>(inFile: str, outFile: str, amp=0.1)</dt></dl>
+</td></tr></table>
+</body></html>

@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Haapoja_suzie.wav		|	0.05 Hz		|	914 %		|	1437 %
+Haapoja_suzie.wav		|	0.25 Hz		|	4611 %		|	6515 %
+Haapoja_suzie.wav		|	0.5 Hz		|	9101 %		|	12827 %

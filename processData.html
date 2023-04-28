@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module processData</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>processData</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:g%3A%5Cmy%20drive%5Cschool%5Cscsu%5Ccsci%20334%20-%20last%20try%5Csemester%20project%5Ccsci-334-semester-project-audio-filtering-and-transcription%5Cprocessdata.py">g:\my drive\school\scsu\csci 334 - last try\semester project\csci-334-semester-project-audio-filtering-and-transcription\processdata.py</a></font></td></tr></table>
+    <p><tt>#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;processData.py<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;takes&nbsp;in&nbsp;a&nbsp;series&nbsp;of&nbsp;sound&nbsp;recordings&nbsp;and&nbsp;uses&nbsp;parselmouth,&nbsp;<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Librosa,&nbsp;and&nbsp;Pandas&nbsp;to&nbsp;create&nbsp;praat&nbsp;annotations&nbsp;for&nbsp;each<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;recording&nbsp;using&nbsp;the&nbsp;corresponding&nbsp;english&nbsp;transcription<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;to&nbsp;prepare&nbsp;the&nbsp;data&nbsp;for&nbsp;insertion&nbsp;to&nbsp;a&nbsp;Recurrent&nbsp;Neural&nbsp;Network<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;Preconditions:&nbsp;processAudio&nbsp;has&nbsp;been&nbsp;run&nbsp;and&nbsp;data&nbsp;files&nbsp;are&nbsp;in<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;the&nbsp;correct&nbsp;tree&nbsp;format<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;Postconditions:&nbsp;a&nbsp;2x2&nbsp;grid&nbsp;for&nbsp;the&nbsp;waveforms&nbsp;and&nbsp;spectrograms<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;have&nbsp;been&nbsp;generated&nbsp;in&nbsp;the&nbsp;figures&nbsp;folder,&nbsp;along&nbsp;with&nbsp;an<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;analysis&nbsp;file&nbsp;listing&nbsp;average&nbsp;percent&nbsp;error&nbsp;rounded&nbsp;to&nbsp;the<br>
+#&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;nearest&nbsp;whole&nbsp;number<br>
+#<br>
+#&nbsp;&nbsp;&nbsp;Author:&nbsp;Jacob&nbsp;Haapoja<br>
+#&nbsp;&nbsp;&nbsp;©2023<br>
+#<br>
+#""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="numpy.html">numpy</a><br>
+<a href="os.html">os</a><br>
+</td><td width="25%" valign=top><a href="ntpath.html">ntpath</a><br>
+<a href="matplotlib.pyplot.html">matplotlib.pyplot</a><br>
+</td><td width="25%" valign=top><a href="parselmouth.html">parselmouth</a><br>
+</td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#eeaa77">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Functions</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#eeaa77"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl><dt><a name="-analyze_waveforms"><strong>analyze_waveforms</strong></a>(fileName: str, orig_path: str, amplitudes: list)</dt><dd><tt>#&nbsp;draws&nbsp;the&nbsp;waveforms&nbsp;for&nbsp;one&nbsp;file,&nbsp;calculates&nbsp;the&nbsp;avg&nbsp;error,&nbsp;and&nbsp;returns<br>
+#&nbsp;&nbsp;&nbsp;these&nbsp;quantities&nbsp;as&nbsp;a&nbsp;list</tt></dd></dl>
+ <dl><dt><a name="-calc_avg_error"><strong>calc_avg_error</strong></a>(acc: parselmouth.Sound, exp: parselmouth.Sound)</dt><dd><tt>#&nbsp;calculates&nbsp;the&nbsp;average&nbsp;error&nbsp;between&nbsp;two&nbsp;sounds</tt></dd></dl>
+ <dl><dt><a name="-draw_spectrograms"><strong>draw_spectrograms</strong></a>(fileName: str, orig_path: str, amplitudes=[0.05, 0.25, 0.5], dynamic_range=70)</dt><dd><tt>#&nbsp;draws&nbsp;the&nbsp;spectrograms&nbsp;for&nbsp;one&nbsp;sound&nbsp;file</tt></dd></dl>
+ <dl><dt><a name="-main"><strong>main</strong></a>()</dt><dd><tt>##&nbsp;main</tt></dd></dl>
+ <dl><dt><a name="-process_data"><strong>process_data</strong></a>(sentence_folder: str, amp=[0.05, 0.25, 0.5])</dt><dd><tt>#&nbsp;processes&nbsp;all&nbsp;audio&nbsp;files&nbsp;in&nbsp;a&nbsp;single&nbsp;sentence&nbsp;folder</tt></dd></dl>
+</td></tr></table>
+</body></html>

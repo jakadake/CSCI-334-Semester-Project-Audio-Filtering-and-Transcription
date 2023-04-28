@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Haapoja_beigewater.wav		|	0.05 Hz		|	803 %		|	1273 %
+Haapoja_beigewater.wav		|	0.25 Hz		|	4013 %		|	5709 %
+Haapoja_beigewater.wav		|	0.5 Hz		|	8077 %		|	11424 %

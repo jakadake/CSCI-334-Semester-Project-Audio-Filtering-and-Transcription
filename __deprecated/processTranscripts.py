@@ -16,6 +16,25 @@
 import os.path as path          # for file type checking
 import nltk                     # natural language processing toolkit NOTE: requires installing nltk corpus data in advance
 from nltk.corpus import cmudict # provides a word to phoneme translation dictionary
+import speech_recognition as sr
+import pocketsphinx as ps
+import parselmouth as pm
+
+def sound_to_phonemes(snd: str):
+    if path.exists(snd) and snd.endswith(".wav"):
+        audio = pm.Sound(snd)
+        audio_mfcc = audio.to_mfcc(32)
+        mfcc_arr = audio_mfcc.to_array()
+
+        decoder = ps.Decoder(lm="en-us-phone")
+
+        decoder.start_utt()
+        for frame in mfcc_arr:
+            decoder.process_cep(frame)
+        decoder.end_utt()
+        transcript = decoder.hyp[0]
+
+    return True
 
 def word_to_phonemes(word, pronDict):
     # Look up the pronunciation in the CMU Pronouncing Dictionary
@@ -79,23 +98,29 @@ def readFromFile(inFile):
 
 
 def main():
-    # define source files
-    s1_path = "Data/S1/transcript.txt"
-    s2_path = "Data/S2/transcript.txt"
-    s3_path = "Data/S3/transcript.txt"
-    s4_path = "Data/S4/transcript.txt"
-    s5_path = "Data/S5/transcript.txt"
-    s6_path = "Data/S6/transcript.txt"
-    # condense for ease of processing
-    sentences = [s1_path, s2_path, s3_path, s4_path, s5_path, s6_path]
-    # for file in sentences
-    for s in sentences:
-        # preserve file name
-        inFile = s
-        # construct outFile name
-        outFile = s.replace(".txt", ".ipa")
-        # call translator
-        prepTranscript(inFile, outFile)
+
+    sound_to_phonemes("Data\\S1\\_0riginal\\audio\\Haapoja_OneSmallStep.wav")
+
+
+
+
+    # # define source files
+    # s1_path = "Data/S1/transcript.txt"
+    # s2_path = "Data/S2/transcript.txt"
+    # s3_path = "Data/S3/transcript.txt"
+    # s4_path = "Data/S4/transcript.txt"
+    # s5_path = "Data/S5/transcript.txt"
+    # s6_path = "Data/S6/transcript.txt"
+    # # condense for ease of processing
+    # sentences = [s1_path, s2_path, s3_path, s4_path, s5_path, s6_path]
+    # # for file in sentences
+    # for s in sentences:
+    #     # preserve file name
+    #     inFile = s
+    #     # construct outFile name
+    #     outFile = s.replace(".txt", ".ipa")
+    #     # call translator
+    #     prepTranscript(inFile, outFile)
     return True
 
 

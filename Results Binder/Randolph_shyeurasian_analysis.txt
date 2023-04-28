@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Randolph_shyeurasian.wav		|	0.05 Hz		|	2163 %		|	3229 %
+Randolph_shyeurasian.wav		|	0.25 Hz		|	10837 %		|	15475 %
+Randolph_shyeurasian.wav		|	0.5 Hz		|	21754 %		|	31129 %

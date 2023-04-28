@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+OConnor_suzie.wav		|	0.05 Hz		|	2519 %		|	3739 %
+OConnor_suzie.wav		|	0.25 Hz		|	12777 %		|	17804 %
+OConnor_suzie.wav		|	0.5 Hz		|	24642 %		|	30410 %

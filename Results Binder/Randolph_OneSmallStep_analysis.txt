@@ -1,0 +1,24 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Randolph_OneSmallStep.wav		|	0.05 Hz		|	1516 %		|	2328 %
+Randolph_OneSmallStep.wav		|	0.25 Hz		|	7558 %		|	10769 %
+Randolph_OneSmallStep.wav		|	0.5 Hz		|	15038 %		|	21546 %
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Randolph_OneSmallStep.wav		|	0.05 Hz		|	1516 %		|	2328 %
+Randolph_OneSmallStep.wav		|	0.25 Hz		|	7558 %		|	10769 %
+Randolph_OneSmallStep.wav		|	0.5 Hz		|	15038 %		|	21546 %
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Randolph_OneSmallStep.wav		|	0.05 Hz		|	1516 %		|	2328 %
+Randolph_OneSmallStep.wav		|	0.25 Hz		|	7558 %		|	10769 %
+Randolph_OneSmallStep.wav		|	0.5 Hz		|	15038 %		|	21546 %
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Randolph_OneSmallStep.wav		|	0.05 Hz		|	1516 %		|	2328 %
+Randolph_OneSmallStep.wav		|	0.25 Hz		|	7558 %		|	10769 %
+Randolph_OneSmallStep.wav		|	0.5 Hz		|	15038 %		|	21546 %
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Randolph_OneSmallStep.wav		|	0.05 Hz		|	1516 %		|	2328 %
+Randolph_OneSmallStep.wav		|	0.25 Hz		|	7558 %		|	10769 %
+Randolph_OneSmallStep.wav		|	0.5 Hz		|	15038 %		|	21546 %
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Randolph_OneSmallStep.wav		|	0.05 Hz		|	1516 %		|	2328 %
+Randolph_OneSmallStep.wav		|	0.25 Hz		|	7558 %		|	10769 %
+Randolph_OneSmallStep.wav		|	0.5 Hz		|	15038 %		|	21546 %

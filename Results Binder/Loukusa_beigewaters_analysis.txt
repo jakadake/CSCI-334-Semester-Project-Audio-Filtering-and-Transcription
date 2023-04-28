@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Loukusa_beigewaters.wav		|	0.05 Hz		|	4259 %		|	6176 %
+Loukusa_beigewaters.wav		|	0.25 Hz		|	21337 %		|	30315 %
+Loukusa_beigewaters.wav		|	0.5 Hz		|	43044 %		|	61173 %

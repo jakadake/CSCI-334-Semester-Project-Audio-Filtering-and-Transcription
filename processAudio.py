@@ -1,11 +1,25 @@
 #""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 #
 #   processAudio.py
-#       extracts praat data from an audio file
+#       noisifies, then filters the audio samples, saving the noisy,
+#           filtered, and reference noise signals as sound files
 #
-#   Preconditions:
+#   Preconditions: Data folder is formatted as shown below:
+#       sentence folder names can be arbitrary but must have subfolders
+#       structured as below
 #
-#   Postconditions: 
+#       Data
+#           |[sentenceFileName]
+#           |   |_0riginal
+#           |   |   |audio
+#           |   |_[%noiseAmplitude]_percent
+#           |   |   |filtered
+#           |   |   |noisy
+#           |   |... (repeat for number of amplitudes to study)
+#
+#   Postconditions: all audio files in all sentence folders will have
+#       been noisified, filtered, and then stored in their respective
+#       folders
 #
 #   Author: Jacob Haapoja
 #   ©2023
@@ -17,14 +31,6 @@ import numpy as np
 import scipy.io.wavfile as wf
 import os
 import os.path as path
-import parselmouth as pm
-import praatio as pio
-import librosa as lib
-# from processTranscripts import *
-# import math
-# import pandas as pd
-# import torch
-# import keras
 
 def noisify(inFile: str, outFile: str, amp = 0.1):
     if path.isfile(inFile) and inFile.endswith(".wav"):
@@ -44,28 +50,7 @@ def noisify(inFile: str, outFile: str, amp = 0.1):
         print('ERROR: problem reading from file or incorrect file type, exiting noisify...')
         return False
 
-
-# def extract(inFile, transcriptFile, outFile):
-#     if path.isfile(inFile) and inFile.endswith(".wav"):
-#         #load audio and transcript
-#         snd = pm.Sound(inFile)
-#         audio, sr = lib.load(inFile, sr=16000)
-#         phonemes = readFromFile(transcriptFile)
-#
-#         #pull data from audio file
-#         pitch = snd.to_pitch()
-#         formants = snd.to_formant_burg()
-#         mfcc = snd.to_mfcc()
-#
-#         tg = pio.textgrid()
-#         trans_tier = pio.data_classes.IntervalTier('transcription', [], 0, pairedWaveFN=inFile)
-#
-#         for i, row in phonemes.iterrows():
-#             trans_tier.addInterval(pio.Interval(row['start'], row['end'], row['word']))
-#
-#         tg.addTier(trans_tier)
-#         tg.save(outFile + '_alignment.TextGrid')
-
+# applies a least mean squares filter to the sound indicated by inFile
 def LMS(inFile: str, outFile: str, ref_out: str, amp = 0.1, lRate=0.01, fOrder=100):
     sRate, audioData = wf.read(inFile)
 
@@ -91,14 +76,7 @@ def main():
     noiseAmplitudes = [0.05, 0.25, 0.5]
 
     # get list of sentence files from 'Data' directory
-    #   sentence folder names can be arbitrary but must have subfolders structured as below
-    #       [sentenceFileName]
-    #           | _0riginal
-    #           |   |audio
-    #           | _[%noiseAmplitude]_percent
-    #           |   |filtered
-    #           |   |noisy
-    #           | ... (repeat for number of amplitudes to study)
+
     senFolders = os.listdir("Data")
 
     # For each Sentence Folder

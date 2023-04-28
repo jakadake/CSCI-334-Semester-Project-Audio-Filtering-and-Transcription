@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Loukusa_suzie.wav		|	0.05 Hz		|	6002 %		|	8645 %
+Loukusa_suzie.wav		|	0.25 Hz		|	30031 %		|	42499 %
+Loukusa_suzie.wav		|	0.5 Hz		|	59880 %		|	85105 %

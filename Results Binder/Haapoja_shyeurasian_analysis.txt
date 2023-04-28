@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Haapoja_shyeurasian.wav		|	0.05 Hz		|	664 %		|	1067 %
+Haapoja_shyeurasian.wav		|	0.25 Hz		|	3291 %		|	4710 %
+Haapoja_shyeurasian.wav		|	0.5 Hz		|	6624 %		|	9397 %

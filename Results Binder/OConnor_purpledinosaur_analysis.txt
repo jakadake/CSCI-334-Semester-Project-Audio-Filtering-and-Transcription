@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+OConnor_purpledinosaur.wav		|	0.05 Hz		|	1464 %		|	2276 %
+OConnor_purpledinosaur.wav		|	0.25 Hz		|	7279 %		|	10203 %
+OConnor_purpledinosaur.wav		|	0.5 Hz		|	14622 %		|	19880 %

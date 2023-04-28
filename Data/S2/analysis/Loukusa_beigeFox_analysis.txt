@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Loukusa_beigeFox.wav		|	0.05 Hz		|	3577 %		|	5185 %
+Loukusa_beigeFox.wav		|	0.25 Hz		|	17958 %		|	25612 %
+Loukusa_beigeFox.wav		|	0.5 Hz		|	35732 %		|	50779 %

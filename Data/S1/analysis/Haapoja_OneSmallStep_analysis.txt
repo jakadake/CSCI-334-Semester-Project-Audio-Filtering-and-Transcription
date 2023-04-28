@@ -1,0 +1,16 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Haapoja_OneSmallStep.wav		|	0.05 Hz		|	1245 %		|	1886 %
+Haapoja_OneSmallStep.wav		|	0.25 Hz		|	6290 %		|	8919 %
+Haapoja_OneSmallStep.wav		|	0.5 Hz		|	12537 %		|	17668 %
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Haapoja_OneSmallStep.wav		|	0.05 Hz		|	1245 %		|	1886 %
+Haapoja_OneSmallStep.wav		|	0.25 Hz		|	6290 %		|	8919 %
+Haapoja_OneSmallStep.wav		|	0.5 Hz		|	12537 %		|	17668 %
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Haapoja_OneSmallStep.wav		|	0.05 Hz		|	1245 %		|	1886 %
+Haapoja_OneSmallStep.wav		|	0.25 Hz		|	6290 %		|	8919 %
+Haapoja_OneSmallStep.wav		|	0.5 Hz		|	12537 %		|	17668 %
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Haapoja_OneSmallStep.wav		|	0.05 Hz		|	1245 %		|	1886 %
+Haapoja_OneSmallStep.wav		|	0.25 Hz		|	6290 %		|	8919 %
+Haapoja_OneSmallStep.wav		|	0.5 Hz		|	12537 %		|	17668 %

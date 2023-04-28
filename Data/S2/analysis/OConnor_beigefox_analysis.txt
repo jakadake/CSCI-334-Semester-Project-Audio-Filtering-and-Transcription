@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+OConnor_beigefox.wav		|	0.05 Hz		|	1758 %		|	2691 %
+OConnor_beigefox.wav		|	0.25 Hz		|	8828 %		|	12392 %
+OConnor_beigefox.wav		|	0.5 Hz		|	17478 %		|	23197 %

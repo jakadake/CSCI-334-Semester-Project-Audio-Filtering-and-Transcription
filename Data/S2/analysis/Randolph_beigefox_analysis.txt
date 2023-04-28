@@ -1,0 +1,4 @@
+recording		|	noise amp		|	avg error noisy		|	avg error filtered
+Randolph_beigefox.wav		|	0.05 Hz		|	1427 %		|	2166 %
+Randolph_beigefox.wav		|	0.25 Hz		|	7143 %		|	10165 %
+Randolph_beigefox.wav		|	0.5 Hz		|	14201 %		|	20372 %
